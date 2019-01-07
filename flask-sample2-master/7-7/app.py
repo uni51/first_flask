@@ -19,17 +19,13 @@ class User(db.Model):
     def __repr__(self):
         return '<User %r>' % self.username
 
-
 @app.route('/')
 def index():
-
      users = User.query.all()
-
      return render_template('index.html', users=users)
 
 @app.route('/form')
 def form():
-
     return render_template('form.html')
 
 @app.route('/register', methods=['POST'])
